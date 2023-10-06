@@ -1,2 +1,3 @@
 # web_template
-a webserver template in rust to be used by llm agents
+a web server template in Rust to be used by LLM-powered autonomous agents
+
