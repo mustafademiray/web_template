@@ -129,7 +129,7 @@ async fn register(app_state: web::Data<AppState>, user: web::Json<User>) -> impl
 }
 
 async fn login(app_state: web::Data<AppState>, user: web::Json<User>) -> impl Responder {
-    let mut db = app_state.db.lock().unwrap();
+    let db = app_state.db.lock().unwrap();
     match db.get_user_by_name(&user.username) {
         Some(stored_user) if stored_user.password == user.password => {
             HttpResponse::Ok().body("Logged in!")
